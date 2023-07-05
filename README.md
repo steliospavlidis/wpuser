@@ -1,6 +1,6 @@
 # ![wpuser](https://github.com/steliospavlidis/wp-user/assets/138578903/2ca3ee00-19b6-42b7-aa8c-668e4f2f6289)
 
-WPUser is a robust Python script specifically created to aid you in discovering all WordPress users from a provided list of websites.
+WPUser is fast Python script specifically created to aid you in discovering all WordPress users from a provided list of websites.
 
 ## How does it work?
 
