@@ -1,6 +1,6 @@
 # ![wpuser](https://github.com/steliospavlidis/wp-user/assets/138578903/2ca3ee00-19b6-42b7-aa8c-668e4f2f6289)
 
-WP-User is a robust Python script specifically created to aid you in discovering all WordPress users from a provided list of websites.
+WPUser is a robust Python script specifically created to aid you in discovering all WordPress users from a provided list of websites.
 
 ## How does it work?
 
@@ -15,11 +15,11 @@ pip3 install requests json colorama
 ## Run the script by entering
 ```
 
-python3 wp-user.py -f [list-of-wordpress-sites.txt] [threads]
+python3 wpuser.py -f [list-of-wordpress-sites.txt] [threads]
 ```
 ```
 
-python3 wp-user.py wp-domains-example.txt 20
+python3 wpuser.py wp-domains-example.txt 20
 ```
 ## Result
 
