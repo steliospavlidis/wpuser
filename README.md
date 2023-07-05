@@ -9,7 +9,7 @@ WP-User works by utilizing the /wp-json/wp/v2/users call!
 ## Install the following packages by entering
 
 ```
-pip3 install requests json colorama
+pip3 install requests colorama
 ```
 
 ## Run the script by entering
