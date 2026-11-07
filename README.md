@@ -4,23 +4,29 @@ WPUser is fast Python script specifically created to aid you in discovering all 
 
 ## How does it work?
 
-WP-User works by utilizing the /wp-json/wp/v2/users call!
+WPUser queries the public WordPress REST API endpoint `/wp-json/wp/v2/users` and pages through all results (100 users per request), so sites with more than 10 users are fully listed.
 
-## Install the following packages by entering
+> **⚠️ Authorized use only.** Only scan sites you own or have written permission to test. Use it to audit your own WordPress installs, for example to check whether user enumeration is exposed and should be disabled.
 
+## Requirements
+
+```bash
+pip3 install -r requirements.txt
 ```
-pip3 install requests colorama
-```
 
-## Run the script by entering
-```
+## Usage
 
+```bash
 python3 wpuser.py -f [list-of-wordpress-sites.txt] [threads]
 ```
+
+Example:
+
+```bash
+python3 wpuser.py -f wp-domains-example.txt 20
 ```
 
-python3 wpuser.py wp-domains-example.txt 20
-```
+The input file has one site per line. Entries without `http://` or `https://` are checked over `https://`.
 ## Result
 
 https://github.com/steliospavlidis/wp-user/assets/138578903/16a35477-a366-4fb5-8e9e-6af20c3558b3
@@ -30,4 +36,11 @@ After the process ends a file found-users.txt is created in the directory. This 
 ![found](https://github.com/steliospavlidis/wp-user/assets/138578903/34245546-e640-4533-8d29-6434e1c44071)
 
 ## Notes
-The script is fairly fast. I have set a timeout=10 seconds, you can change it if your targets are very slow. Also targets must reply with a HTTP status code 200.
+
+- The request timeout is 10 seconds. Change it in `wpuser.py` if your sites are very slow.
+- Sites must reply with HTTP 200 and valid JSON to be counted.
+- **Hardening tip:** if your own site shows up in the results, restrict the `users` REST endpoint to logged-in users with a security plugin or a small `rest_endpoints` filter.
+
+## License
+
+[MIT](LICENSE)
